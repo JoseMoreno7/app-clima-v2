@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>App del Clima</title>
+  <link rel="icon" type="image/png" href="/img/clima-favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-blue-200 to-blue-400 min-h-screen flex flex-col">
+
+  <!-- Contenido principal centrado -->
+  <div class="flex-grow flex items-center justify-center p-4">
+    <div id="mainContainer" class="bg-white/90 backdrop-blur-lg p-6 rounded-3xl shadow-xl w-full max-w-md text-center transition-all duration-300">
+      <h1 class="text-2xl font-bold mb-6 text-blue-800 drop-shadow">Consulta el Clima 🌤️</h1>
+      <input
+        id="cityInput"
+        type="text"
+        placeholder="Escribe una ciudad"
+        class="w-full p-2 rounded-xl border border-gray-300 mb-4"
+      />
+      <button
+        onclick="getWeather()"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl font-medium transition"
+      >
+        Buscar
+      </button>
+
+      <!-- Selector de unidades -->
+      <div class="flex justify-center items-center my-4">
+        <span class="text-sm mr-2">Mostrar en:</span>
+        <button 
+          id="unitToggle" 
+          class="bg-blue-100 hover:bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm font-medium transition"
+          onclick="toggleTemperatureUnit()"
+        >
+          °C / °F
+        </button>
+      </div>
+
+      <!-- Loader -->
+      <div id="loader" class="mt-4 hidden">
+        <svg class="animate-spin h-8 w-8 text-blue-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+          <path class="opacity-75" fill="currentColor"
+            d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+        </svg>
+        <p class="text-sm text-blue-700 mt-2">Buscando clima...</p>
+      </div>
+
+      <!-- Resultado -->
+      <div id="weatherResult" class="mt-6 hidden">
+        <h2 class="text-xl font-semibold" id="cityName"></h2>
+        <img id="weatherIcon" class="mx-auto my-2 w-16 h-16" />
+        <p id="temperature" class="text-2xl font-bold"></p>
+        <p id="description" class="italic text-gray-600"></p>
+        <p id="details" class="text-sm text-gray-500 mt-2"></p>
+      </div>
+
+      <!-- Error -->
+      <div id="errorMessage" class="mt-4 text-red-600 hidden text-sm font-medium">
+        Ciudad no encontrada. Intenta con otra.
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-600 p-4">
+    <p>
+      © <span id="year"></span> <strong class="text-blue-900">MorenoDevs</strong>. Todos los derechos reservados.  
+      <br />
+      <a href="http://josemoreno7.github.io/MorenoDevs/" target="_blank" class="underline hover:text-blue-700">
+        www.morenodevs.com
+      </a>
+    </p>
+  </footer>
+
+  <!-- Script -->
+  <script src="app.js"></script>
+</body>
+</html>
