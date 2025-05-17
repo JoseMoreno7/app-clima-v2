@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     yearSpan.textContent = new Date().getFullYear();
   }
   
-  // Opcional: Buscar clima al presionar Enter
+  // Buscar clima al presionar Enter
   document.getElementById("cityInput").addEventListener("keypress", (e) => {
     if (e.key === "Enter") getWeather();
   });

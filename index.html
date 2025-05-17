@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>App del Clima</title>
   <link rel="icon" type="image/png" href="./img/clima-favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -51,8 +51,8 @@
       <!-- Resultado -->
       <div id="weatherResult" class="mt-6 hidden">
         <h2 class="text-xl font-semibold" id="cityName"></h2>
-        <img id="weatherIcon" class="mx-auto my-2 w-16 h-16" />
-        <p id="temperature" class="text-2xl font-bold"></p>
+        <img id="weatherIcon" class="mx-auto my-2" />
+        <p id="temperature" class="text-2xl"></p>
         <p id="description" class="italic text-gray-600"></p>
         <p id="details" class="text-sm text-gray-500 mt-2"></p>
       </div>
@@ -65,13 +65,14 @@
   </div>
 
   <!-- Footer -->
-  <footer class="text-center text-sm text-gray-600 p-4">
+  <footer class="text-center text-sm text-gray-600 dark:text-gray-300 p-4 mt-auto">
     <p>
-      © <span id="year"></span> <strong class="text-blue-900">MorenoDevs</strong>. Todos los derechos reservados.  
-      <br />
-      <a href="http://josemoreno7.github.io/MorenoDevs/" target="_blank" class="underline hover:text-blue-700">
-        www.morenodevs.com
-      </a>
+      © <span id="year"></span> 
+      <strong class="text-blue-400 dark:text-blue-500">
+        <a href="http://josemoreno7.github.io/MorenoDevs/" target="_blank" class="underline hover:text-blue-700 dark:hover:text-blue-300">
+          MorenoDevs
+        </a>
+      </strong>| Todos los derechos reservados.
     </p>
   </footer>
 
